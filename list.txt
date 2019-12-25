@@ -1,0 +1,100 @@
+import React from 'react';
+
+class List extends React.Component {
+
+    // constructor(props) {
+    //     super(props);
+
+    //     this.state = {
+    //         inputValue: "",
+    //         tasks: []
+    //     }
+
+    //     // vos bind etc...
+    //     this.removeTasks = this.removeTasks.bind(this)
+    // }
+
+    // removeTasks = (event) => {
+    //     event.preventDefault()
+        
+    //     let dataKey = event.currentTarget.dataset['index']
+    //     let tasksIndex = this.state.tasks.indexOf(this.state.inputValue)
+
+    //     delete this.state.tasks[dataKey]
+        
+        
+    //     this.setState({
+    //         tasks: this.state.tasks
+    //     })
+               
+                
+            
+        
+
+           
+    // };
+
+    // removeTasks = (index) => {
+    //     index.preventDefault()
+        
+        
+    //     let tasksIndex = index.getAttribute("data-key")
+        
+
+    //     delete this.state.tasks[tasksIndex]
+        
+        
+            
+            
+            
+    //     this.setState({
+    //         tasks: this.state.tasks
+    //     })
+               
+                
+           
+    // };
+
+    
+    // removeTasks  = index => {
+    //     const { tasks } = this.state
+
+    //     this.setState( {
+    //         tasks: tasks.filter((tasks, tasksIndex) => {
+    //             return tasksIndex !== index
+    //         })
+    //     })
+
+        
+    // }
+    
+
+    render() {
+
+        // const {listTasks} = this.props
+      
+        return (
+        
+
+            
+
+        <div className="tableTodo">
+            <ul>
+            {
+                this.props.tasks.map((value, index) => {
+                    return (<li className="Tasks" key={index}>{value} 
+                    <button>Done</button>
+                    <button>Pas done</button>
+                    <button className="delete">Delete</button>  </li> );
+                })
+
+                     
+            }  
+            </ul>
+
+        </div>
+        );
+    }
+  }
+
+export default List;
