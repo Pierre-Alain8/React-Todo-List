@@ -21,10 +21,21 @@ body {
     padding-bottom: 10px;
     padding-right: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     
   
+}
+
+.listTasks {
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
 }
 
 
@@ -40,24 +51,20 @@ form {
     align-items: center;
 }
 
-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .tasks {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
-    border-bottom: 2px solid #FF4C55;
+    border-bottom: 2px solid #6991ED;
     
 }
 
 .tasks[data-done="true"] {
     background-color: gray;
+    opacity: 0.5;
+    border: none;
     text-decoration: line-through;
     
 }
@@ -82,14 +89,15 @@ ul {
     text-transform: uppercase;
     cursor: pointer;
     border: none;
+    border-bottom: 2px solid #8EFFC1;
     margin-left: 5px;
-    padding: 5px 10px;
+    padding: 3px 10px;
     align-items: flex-start;
 }
 
 
 
-.tasksNotDone{
+/* .tasksNotDone{
     background-color: white;
     cursor: pointer;
     text-transform: uppercase;
@@ -98,15 +106,16 @@ ul {
     padding: 5px 10px;
     display: flex;
     align-items: flex-start;
-}
+} */
 
 .tasksDelete {
     background-color: white;
     cursor: pointer;
     text-transform: uppercase;
     border: none;
-    margin-left: 5px;
-    padding: 5px 10px;
+    border-bottom: 2px solid #F55263;
+    /* margin-left: 5px; */
+    padding: 3px 10px;
     display: flex;
     align-items: flex-start;
 
@@ -147,12 +156,12 @@ ul {
 }
 
 
-.tasksNotDone:hover{
+/* .tasksNotDone:hover{
     font-weight: bold;
     color: white;
     background-color: #B2BEC3;
     border: 4px solid #B2BEC3;
-}
+} */
 
 .tasksNotDone:focus {
     outline: none;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react' 
 
+
 class List extends Component {
 
     constructor(props) {
@@ -29,17 +30,18 @@ class List extends Component {
      
         return(
         
-            <li  className="tasks"
+        <div className="listTasks">
+            <p className="tasks"
                 id={taskId } 
                 data-done={dataDone}>
 
              {taskValue }
+            </p>
 
-             <button onClick={taskDone} style={{display: "flex"}} className="tasksDone">Done</button>
-             <button onClick={ () => taskDelete(taskId)} className="tasksDelete" >Delete</button>
-            </li>
-
+            <button onClick={taskDone} style={{display: "flex"}} className="tasksDone">Done</button>
+            <button onClick={ () => taskDelete(taskId)} className="tasksDelete" >Delete</button>
             
+        </div>    
 
             
 

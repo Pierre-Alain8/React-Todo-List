@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState }  from 'react';
 import { withRouter} from 'react-router-dom';
 import Title from './title';
 import InputForm from './inputForm';
@@ -14,6 +14,7 @@ class Home extends React.Component {
         this.state = {
             inputValue: "",
             tasks: [], 
+            filtred: [],
         }
 
 
@@ -84,7 +85,7 @@ class Home extends React.Component {
     }
     // On convertit le state tasks du component Home en chaîne de caractères pour qu'il soit sauvgardé dans le local Storage
 
-    saveStateToLocalStorage() {
+    saveStateToLocalStorage = () => {
         const state = localStorage.getItem('state')
         if (state) {
           this.setState(JSON.parse(state))
@@ -92,17 +93,25 @@ class Home extends React.Component {
       }
     // Grâce à cette méthode, lorsque que ce component est chargé on récupère la valeur du state
 
-    filterDone(id) {
-        const tasksDone = this.state.tasks.filter(task => task.done)
-    }
+    filterDone = (id) => {
 
+        const tasks = [...this.state.tasks, this.state.filtred]
+        tasks[id].done = false 
+
+        if (tasks[id].done = !tasks[id].done ) {
+            tasks = this.state.filtred   
+        }
+
+        this.setState({
+            tasks
+        });
+        
+        console.log(tasks)
+       
+    }
 
    
 
-
-    
-    
-    
     render() {
 
 
@@ -120,37 +129,38 @@ class Home extends React.Component {
                 />
 
                 <div className="tableTodo">
-                    <ul>  
-   
-                        {
-                        this.state.tasks.map((item, index) => { 
-                            
-                            return(
-                        
+            
+                            {
+                            this.state.tasks.map((item, index) => { 
                                 
-                                    <List 
+                                return(
+                            
                                     
-                                        key={item.id}
-                                        taskId={item.id } 
-                                        taskValue={item.inputValue } 
-                                        dataDone={item.done }
-                                        taskDone={ () => this.doneTasks(index) }
-                                        taskDelete={this.deleteTasks }
+                                        <List 
                                         
-                                    />
-                            
-                            
-                    
-                            )}) 
-                    
-                        }
-                    </ul>
+                                            key={item.id}
+                                            taskId={item.id } 
+                                            taskValue={item.inputValue } 
+                                            dataDone={item.done }
+                                            taskDone={ () => this.doneTasks(index) }
+                                            taskDelete={this.deleteTasks }
+                                            onclick={this.state.tasks}
+                                            
+                                        />
+                                
+                                
+                        
+                                )}) 
+                        
+                            }
 
                 </div>
             {/* Je réalise un .map() sur le state tasks pour récupérer chaque élément de ce tableau. 
              .map() retourne le components list avec les éléments qu'il contient */}
                 <Filtre  
-                //   buttonFilterdone={this.filterDone }    
+                  filterAll={this.filterTasks }   
+                  filterDone={this.filterTasks }
+                  filterNotDone={this.filterTasks}
                 />
             </div>
         );

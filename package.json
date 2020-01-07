@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
   "homepage": "https://Pierre-Alain8.github.io/React-Todo-List",
   "scripts": {
     "start": "react-scripts start",
@@ -39,6 +38,7 @@
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8"
+    "@storybook/react": "^5.2.8",
+    "gh-pages": "^2.1.1"
   }
 }
