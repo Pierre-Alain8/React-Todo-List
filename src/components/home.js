@@ -1,4 +1,4 @@
-import React,{ useState }  from 'react';
+import React from 'react';
 import { withRouter} from 'react-router-dom';
 import Title from './title';
 import InputForm from './inputForm';
@@ -80,44 +80,22 @@ class Home extends React.Component {
         console.log(tasks)
     };
 
+    // On convertit le state tasks du component Home en chaîne de caractères pour qu'il soit sauvgardé dans le local Storage
     saveTasksToLocalStorage = () => {
         localStorage.setItem('tasks', JSON.stringify(this.state))
     }
-    // On convertit le state tasks du component Home en chaîne de caractères pour qu'il soit sauvgardé dans le local Storage
-
+    
+    // Grâce à cette méthode, lorsque que ce component est chargé on récupère la valeur du state
     saveStateToLocalStorage = () => {
         const state = localStorage.getItem('state')
         if (state) {
           this.setState(JSON.parse(state))
         }
-      }
-    // Grâce à cette méthode, lorsque que ce component est chargé on récupère la valeur du state
-
-    filterDone = (id) => {
-
-        const tasks = [...this.state.tasks, this.state.filtred]
-        tasks[id].done = false 
-
-        if (tasks[id].done = !tasks[id].done ) {
-            tasks = this.state.filtred   
-        }
-
-        this.setState({
-            tasks
-        });
-        
-        console.log(tasks)
-       
     }
 
-   
 
     render() {
-
-
-
         return (
-            
             <div className="mainTodo">
                 <Title name="TODO LIST PIERRE-ALAIN" />
                 <InputForm 

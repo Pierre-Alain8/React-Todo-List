@@ -9,7 +9,6 @@ class InputForm extends React.Component {
         const {valeur} = this.props
         const {handleSubmit} = this.props
         const {handleChange} = this.props
-        const {handleStorage} = this.props
         // definition des propriétés propre au inputForm, les noms doit être conformes à se qu'on recherche
 
         return (

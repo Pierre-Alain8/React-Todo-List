@@ -8,21 +8,22 @@ class Filtre extends React.Component {
 
         return (
         <div className="filtresButton">
-            <button className="filtreButton"
-                onClick={filterAll }  
-            >ALL
+
+        <button className="filtreButton" onClick={filterAll } >
+           
+            ALL
+            
+        </button>
+
+            <button className="filtreButton" onClick={filterDone } >
+                
+                DONE ONLY
 
             </button>
 
-            <button className="filtreButton"
-                onClick={filterDone } 
-            >DONE ONLY
-
-            </button>
-
-            <button className="filtreButton"
-                onClick={filterNotDone }
-            >NOT DONE ONLY
+            <button className="filtreButton" onClick={filterNotDone } >
+                
+                NOT DONE ONLY
 
             </button>
         </div>

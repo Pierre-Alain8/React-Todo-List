@@ -3,23 +3,7 @@ import React, { Component } from 'react'
 
 class List extends Component {
 
-    constructor(props) {
-            super(props);
-
-    //  this.selectKey = this.selectKey.bind
-    }
-
-    // selectKey(event) {
-    //     const selectKeyTasks = document.getElementsByClassName("tasks")
-    //     console.log(event.target.li[selectKeyTasks].getAttribute('data-id'));
-
-    // }
-
-
-
-
-
-
+   
 
     render() {
 
@@ -31,11 +15,11 @@ class List extends Component {
         return(
         
         <div className="listTasks">
+            
             <p className="tasks"
-                id={taskId } 
+                id={taskId} 
                 data-done={dataDone}>
-
-             {taskValue }
+                {taskValue }
             </p>
 
             <button onClick={taskDone} style={{display: "flex"}} className="tasksDone">Done</button>
