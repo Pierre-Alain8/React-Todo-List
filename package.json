@@ -6,7 +6,7 @@
   "homepage": "https://Pierre-Alain8.github.io/React-Todo-List",
   "scripts": {
     "start": "BROWSER=none react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI= react-scripts build",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "predeploy": "npm run build",
