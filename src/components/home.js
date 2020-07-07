@@ -1,10 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Title from "./title";
-import InputForm from "./inputForm";
-import List from "./list";
+import Title from "../../../../../ReactToDo/src/components/Title";
+import InputForm from "../../../../../ReactToDo/src/components/InputForm";
+import List from "../../../../../ReactToDo/src/components/List";
 import "../../src/main.css";
-import Filtre from "./filtre";
+import Filtre from "../../../../../ReactToDo/src/components/Filtre";
 
 class Home extends React.Component {
   constructor(props) {

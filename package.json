@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://Pierre-Alain8.github.io/React-Todo-List",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
