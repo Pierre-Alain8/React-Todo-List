@@ -1,10 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Title from "./title";
-import InputForm from "./inputForm";
-import List from "./list";
+import Title from "./Title";
+import InputForm from "./InputForm";
+import List from "./List";
 import "../main.css";
-import Filtre from "./filtre";
+import Filtre from "./Filtre";
 
 class Home extends React.Component {
   constructor(props) {
